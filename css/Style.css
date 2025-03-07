@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С 8 Марта, Машенька!</title>
+    <style>
+        body {
+            background-color: #ffe6f2;
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        
+        .container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .content {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            opacity: 0;
+            animation: fadeIn 5s forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Анимация падающих сердечек */
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 20px;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10%); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Сердечки -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            document.body.appendChild(heart);
+
+            let size = Math.random() * 20 + 10;
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = size + "px";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+
+    <!-- Контент -->
+    <div class="container">
+        <div class="content">
+            <h1>С 8 МАРТА</h1>
+            <h2>🌸 Моя дорогая Машенька! 🌸</h2>
+            <p>С 8 марта! 🌺 Пусть этот день принесет тебе больше радости, улыбок и волшебных моментов! ✨</p>
+            <p>Желаю всегда быть такой же яркой, вдохновляющей и невероятной! 😍</p>
+            <p>Пусть твоя жизнь будет наполнена счастьем, успехами и любовью! ♡</p>
+            <p>💖 Пусть каждый новый день будет лучше предыдущего!</p>
+            <p>😊 Пусть тепло и радость окружают тебя каждый день, а сегодня — особенно!</p>
+            <p>С праздником! 🌷</p>
+        </div>
+    </div>
+
+</body>
+</html>
