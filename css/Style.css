@@ -26,7 +26,7 @@
 
         .content {
             position: absolute;
-            top: 40%; /* Сделано немного выше */
+            top: 35%; /* Сдвиг немного выше */
             transform: translateY(-50%);
         }
 
